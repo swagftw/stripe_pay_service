@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  debug: true
+  logLevel: debug
+  timeout: 15
+
+database:
+  user: postgres
+  password: postgres
+  host: postgres
+  db: postgres
+  timeout: 30
+
+stripe:
+  secretKey: "sk_test_123"
+  publishableKey: "pk_test_123"
+
