@@ -22,4 +22,4 @@ go.work
 
 db/
 
-.env
+*.env
