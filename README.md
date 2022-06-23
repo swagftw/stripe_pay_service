@@ -6,6 +6,7 @@ Server side implementation of Stripe payment gateway.
 
 Make sure you have docker installed.
 
+### ``LOCALLY``
 #### Clone project
 
 ```bash
@@ -18,13 +19,29 @@ git clone https://github.com/swagftw/stripe_pay_service
 docker-compose up
 ```
 
+### ``DEPLOYED SERVER``
+
+Go the postman environment and add `url` as `https://stripepayservice-production.up.railway.app/api/v1`
+
+
+### REQUESTING
 ##### Download postman collections
+
+Setup an environment in postman add the following variable:
+
+If you are running locally
+
+`url`=`http://localhost:8080/api/v1`
+
+If you are running on the server
+
+`url`=`https://stripepayservice-production.up.railway.app/api/v1`
 
 [Download postman collection](https://www.getpostman.com/collections/e63b9ec893946fcc55df)
 
 [Download postman test collection](https://www.getpostman.com/collections/5afac639f2c0f2d4b593)
 
-Check out requests in postman.
+Choose the environment just created and check requests in above collections.
 
 ### RUN THE TESTS
 
@@ -96,7 +113,7 @@ More about [architecture](https://netflixtechblog.com/ready-for-changes-with-hex
   |- /stripeclient  // custom implementation over stripe go sdk for abstracting stripe api
 ```
 
-`About API Testing`
+`API Testing`
 
 ```
 To test API run postman test collection provided above.
@@ -107,6 +124,7 @@ To test API run postman test collection provided above.
 
 ```
 - Writing more test cases
+- Writing API test cases in project itself.
 - Remove env file from project, kept file for now in remote repo just for dev purposes.
 ```
 

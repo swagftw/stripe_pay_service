@@ -12,8 +12,6 @@ services:
       retries: 5
     env_file:
       - .env
-    volumes:
-      - ./utl/migration/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
     restart: always
     networks:
       - default

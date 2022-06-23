@@ -38,7 +38,7 @@ func StartServer(e *echo.Echo) {
 	cfg := config.GetGlobalConfig()
 
 	// ping server to check if it is running
-	e.GET("/ping", func(c echo.Context) error {
+	e.GET("/api/v1/ping", func(c echo.Context) error {
 		return c.String(http.StatusOK, "pong")
 	})
 
