@@ -1,6 +1,5 @@
 # STRIPE PAY SERVICE
 
-
 Server side implementation of Stripe payment gateway.
 
 ### RUN THE PROJECT
@@ -11,12 +10,6 @@ Make sure you have docker installed.
 
 ```bash
 git clone https://github.com/swagftw/stripe_pay_service
-```
-
-##### Get dependencies
-
-```bash
-go mod download && go mod vendor
 ```
 
 ##### Spin up server
@@ -45,7 +38,7 @@ cd to cloned project
 go mod download && go mod vendor
 ```
 
-##### Run Stripe mock server
+##### Get Stripe mock server
 
 ```bash
 docker run -p 12111:12111 stripe/stripe-mock
@@ -102,3 +95,18 @@ More about [architecture](https://netflixtechblog.com/ready-for-changes-with-hex
   |- /storage       // database utitilies
   |- /stripeclient  // custom implementation over stripe go sdk for abstracting stripe api
 ```
+
+`About API Testing`
+
+```
+To test API run postman test collection provided above.
+```
+
+
+`Future improvements`
+
+```
+- Writing more test cases
+- Remove env file from project, kept file for now in remote repo just for dev purposes.
+```
+

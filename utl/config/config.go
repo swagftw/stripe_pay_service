@@ -51,12 +51,7 @@ func InitConfig(path string, envPath string) error {
 	}
 
 	// load env variables from file to environment
-	err = godotenv.Load(envPath)
-	if err != nil {
-		logger.Logger.Error(context.TODO(), "failed to load env file", err)
-
-		return err
-	}
+	_ = godotenv.Load(envPath)
 
 	viper.AutomaticEnv()
 
