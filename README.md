@@ -21,7 +21,7 @@ docker-compose up
 
 #### ``DEPLOYED SERVER``
 
-Go the postman environment and add `url` as `https://stripepayservice-production.up.railway.app/api/v1`
+Go to the postman environments and add variable `url` as `https://stripepayservice-production.up.railway.app/api/v1`
 
 
 ### REQUESTING
