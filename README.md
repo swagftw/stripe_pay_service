@@ -6,7 +6,7 @@ Server side implementation of Stripe payment gateway.
 
 Make sure you have docker installed.
 
-### ``LOCALLY``
+#### ``LOCALLY``
 #### Clone project
 
 ```bash
@@ -19,7 +19,7 @@ git clone https://github.com/swagftw/stripe_pay_service
 docker-compose up
 ```
 
-### ``DEPLOYED SERVER``
+#### ``DEPLOYED SERVER``
 
 Go the postman environment and add `url` as `https://stripepayservice-production.up.railway.app/api/v1`
 
