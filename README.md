@@ -1,12 +1,10 @@
 # STRIPE PAY SERVICE
 
----
 
 Server side implementation of Stripe payment gateway.
 
 ### RUN THE PROJECT
 
----
 Make sure you have docker installed.
 
 ##### Spin up server
@@ -23,7 +21,6 @@ docker-compose up
 
 ### RUN THE TESTS
 
----
 Make sure you have go installed
 
 #### Clone project
