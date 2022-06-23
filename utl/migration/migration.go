@@ -25,6 +25,12 @@ func Migrate() {
 	}
 
 	err = db.Transaction(func(tx *gorm.DB) error {
+		// create generate uid extension
+		err = db.Exec("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";\n\nCREATE EXTENSION IF NOT EXISTS pgcrypto;\n\nCREATE OR REPLACE FUNCTION generate_uid(size INT) RETURNS TEXT AS $$\nDECLARE\ncharacters TEXT := 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n  bytes BYTEA := gen_random_bytes(size);\n  l INT := length(characters);\n  i INT := 0;\noutput TEXT := '';\nBEGIN\n  WHILE i < size LOOP\n    output := output || substr(characters, get_byte(bytes, i) % l + 1, 1);\n    i := i + 1;\nEND LOOP;\n  RETURN output;\nEND;\n$$ LANGUAGE plpgsql VOLATILE;").Error
+		if err != nil {
+			return err
+		}
+
 		err = db.Exec("CREATE SCHEMA IF NOT EXISTS payment;").Error
 		if err != nil {
 			return err

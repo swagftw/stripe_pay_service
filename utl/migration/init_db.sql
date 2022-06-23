@@ -17,5 +17,3 @@ END LOOP;
   RETURN output;
 END;
 $$ LANGUAGE plpgsql VOLATILE;
-
-SELECT 'CREATE DATABASE stripe_db' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'stripe_db') \gexec

@@ -32,6 +32,7 @@ type DB struct {
 	User     string `yaml:"user"`
 	Password string `yaml:"pass"`
 	Host     string `yaml:"host"`
+	Port     string `yaml:"port"`
 	Database string `yaml:"db"`
 	Timeout  int    `yaml:"timeout"`
 }
@@ -106,6 +107,11 @@ func loadEnv() {
 	dbDatabase := viper.GetString("POSTGRES_DB")
 	if dbDatabase != "" {
 		config.DB.Database = dbDatabase
+	}
+
+	dbPort := viper.GetString("POSTGRES_PORT")
+	if dbDatabase != "" {
+		config.DB.Port = dbPort
 	}
 
 	dbTimout := viper.GetInt("DB_TIMEOUT")

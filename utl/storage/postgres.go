@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"net"
 	"os"
 	"time"
 
@@ -23,7 +24,7 @@ func NewPostgresDB() (*gorm.DB, error) {
 	dbCfg := cfg.GetDBConfig()
 	user := dbCfg.User
 	password := dbCfg.Password
-	host := dbCfg.Host
+	host := net.JoinHostPort(dbCfg.Host, dbCfg.Port)
 	dbname := dbCfg.Database
 
 	sqlDB, err := sql.Open("pgx", fmt.Sprintf("postgres://%s:%s@%s/%s?sslmode=disable", user, password, host, dbname))
