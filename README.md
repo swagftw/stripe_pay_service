@@ -7,22 +7,6 @@ Server side implementation of Stripe payment gateway.
 
 Make sure you have docker installed.
 
-##### Spin up server
-
-```bash
-docker-compose up
-```
-
-##### Download postman collections
-
-[Download postman collection](https://www.getpostman.com/collections/e63b9ec893946fcc55df)
-
-[Download postman test collection](https://www.getpostman.com/collections/5afac639f2c0f2d4b593)
-
-### RUN THE TESTS
-
-Make sure you have go installed
-
 #### Clone project
 
 ```bash
@@ -35,7 +19,33 @@ git clone https://github.com/swagftw/stripe_pay_service
 go mod download && go mod vendor
 ```
 
-##### Get Stripe mock server
+##### Spin up server
+
+```bash
+docker-compose up
+```
+
+##### Download postman collections
+
+[Download postman collection](https://www.getpostman.com/collections/e63b9ec893946fcc55df)
+
+[Download postman test collection](https://www.getpostman.com/collections/5afac639f2c0f2d4b593)
+
+Check out requests in postman.
+
+### RUN THE TESTS
+
+Make sure you have go installed
+
+
+##### Get dependencies
+cd to cloned project
+
+```bash
+go mod download && go mod vendor
+```
+
+##### Run Stripe mock server
 
 ```bash
 docker run -p 12111:12111 stripe/stripe-mock
