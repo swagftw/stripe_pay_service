@@ -13,6 +13,7 @@ import (
 	"github.com/swagftw/stripe_pay_service/utl/logger"
 )
 
+// ErrorHandler is a custom echo error handler.
 func ErrorHandler(err error, ctx echo.Context) {
 	var errResp fault.ErrResponse
 	errResp.StatusCode = http.StatusInternalServerError
